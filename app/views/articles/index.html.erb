@@ -1,25 +1,20 @@
-<h1>hello</h1>
+<h1>listallarticles</h1>
+<p>
+<%= link_to "Createnewarticle", new_article_path %>
+</p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Discription</th>
+  </tr>
 
-<% if @article.errors.any? %>
-<% @article.errors.full_messages.each do |msg| %>
-<h2>the following errors prevented the article</h2>
-<ul>
-  <li><%= msg %></li>
+  <% @articles.each do |article|%>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.description %></td>
+    <td><%= link_to "edit", edit_article_path(article) %> |
+    <td><%= link_to "show", article_path(article)  %></td>
+    </td>
+  </tr>
   <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @article do |f| %>
-<p>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-
-<% end %>
+</table>
