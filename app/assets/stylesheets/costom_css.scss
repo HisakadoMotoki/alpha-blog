@@ -21,6 +21,7 @@ $navbar-default-bg: black;
   text-align: center;
 }
 .jumbotron{
+<<<<<<< Updated upstream
   
   background-size: cover;
 }
@@ -73,4 +74,7 @@ footer ul{
 footer ul li{
   float: left;
   margin-left: 15px;
+=======
+  background-image: asset-url('21.png')
+>>>>>>> Stashed changes
 }
